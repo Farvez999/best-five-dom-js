@@ -1,11 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Inter:wght@300&family=Lobster&family=Manrope:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
 .header {
     height: 400px;
     width: 100%;
-    background-color: black;
     padding: 70px 0;
     text-align: center;
     color: white;
-    
+    background-color: black;
+  }
+
+  .header h1{
+    font-family: 'Berkshire Swash', cursive;
   }
 
   .header p {
@@ -18,3 +29,17 @@
   .card img{
     height: 200px;
   }
+
+  .selected-v{
+    background-color: black;
+    color: white;
+  }
+
+  footer{
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    padding: 5px;
+    color: white;
+    height: 110px;
+}
