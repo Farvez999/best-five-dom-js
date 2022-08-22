@@ -1,13 +1,13 @@
-const selectedFive = document.getElementById('selected-five');
+const selectedFivePlayerList = document.getElementById('selected-five');
 function addPlayerCard(element) {
     const playerName = element.parentNode.children[0];
     console.log(playerName);
 
-    if (selectedFive.children.length < 5) {
+    if (selectedFivePlayerList.children.length < 5) {
 
         let li = document.createElement('li');
         li.innerText = playerName.innerText;
-        selectedFive.appendChild(li);
+        selectedFivePlayerList.appendChild(li);
         const btn = element.parentNode.children[2];
         btn.disabled = true;
         btn.style.backgroundColor = 'gray';
@@ -24,7 +24,7 @@ document.getElementById('calculate').addEventListener('click', function () {
     const perPlayerField = document.getElementById('per-player-field').value;
     const perPlyer = parseFloat(perPlayerField);
 
-    const playerListIndex = selectedFive.children.length;
+    const playerListIndex = selectedFivePlayerList.children.length;
     console.log(playerListIndex)
     if (playerListIndex <= 0) {
         alert("Dont have any play. Please setect player.")
@@ -38,20 +38,14 @@ document.getElementById('calculate').addEventListener('click', function () {
 document.getElementById('calculate-total').addEventListener('click', function () {
     const playerExpensesElement = document.getElementById('player-expenses');
     const playerExpensesString = playerExpensesElement.innerText;
+
     const playerExpenses = parseFloat(playerExpensesString);
-    console.log(playerExpenses)
 
+    const managerSalaryFild = getInputFieldValueById('manager-salary');
 
-    const managerSalaryFild = document.getElementById('manager-salary').value;
-    const managerSalary = parseFloat(managerSalaryFild);
-    console.log(managerSalary)
+    const coachSalaryFild = getInputFieldValueById('coach-salary');
 
-    const coachSalaryFild = document.getElementById('coach-salary').value;
-    const coachSalary = parseFloat(coachSalaryFild);
-    console.log(coachSalary)
-
-    const totalAmaount = playerExpenses + managerSalary + coachSalary;
-    console.log(totalAmaount)
+    const totalAmaount = playerExpenses + managerSalaryFild + coachSalaryFild;
 
     const total = document.getElementById('total-amaount');
     total.innerText = totalAmaount;
