@@ -21,15 +21,14 @@ function addPlayerCard(element) {
 }
 
 document.getElementById('calculate').addEventListener('click', function () {
-    const perPlayerField = document.getElementById('per-player-field').value;
-    const perPlyer = parseFloat(perPlayerField);
+    const perPlayerField = getInputFieldValueById('per-player-field');
 
     const playerListIndex = selectedFivePlayerList.children.length;
     console.log(playerListIndex)
     if (playerListIndex <= 0) {
         alert("Dont have any play. Please setect player.")
     }
-    const allPlayerAmaount = perPlyer * playerListIndex
+    const allPlayerAmaount = perPlayerField * playerListIndex
     const playerExpenses = document.getElementById('player-expenses');
     playerExpenses.innerText = allPlayerAmaount;
 });
